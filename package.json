@@ -1,5 +1,5 @@
 {
-  "name": "svelte-preprocess-ifdef",
+  "name": "svelte-preprocessor-ifdef",
   "version": "1.0.0",
   "description": "Svelte preprocessor for conditional removal or inclusion of code",
   "main": "index.js",
