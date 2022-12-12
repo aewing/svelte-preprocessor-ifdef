@@ -1,6 +1,6 @@
 {
   "name": "svelte-preprocessor-ifdef",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Svelte preprocessor for conditional removal or inclusion of code",
   "repository": {
     "type": "git",
