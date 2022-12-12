@@ -26,7 +26,6 @@ export async function parseIfDef(
       return result;
     }
   );
-
   return (
     parsed
       ?.trim()

@@ -21,12 +21,12 @@ const config = {
 };
 ```
 
-## Examples
+## Basic Example
 
 ```html
 <!-- App.svelte -->
 <script>
-  /* #if DEBUG */
+  /* #ifdef DEBUG */
   const DEBUG = true;
   /* #else */
   const DEBUG = false;
@@ -42,10 +42,27 @@ const config = {
 DEBUG=true npm run build
 ```
 
+Output:
+
 ```html
 <!-- App.svelte -->
 <script>
-  /* #if (SOME_VAR === 'foo') */
+  const DEBUG = true;
+</script>
+
+{#if DEBUG}
+<p>Debug mode</p>
+{/if}
+```
+
+---
+
+## Chaining conditions
+
+```html
+<!-- App.svelte -->
+<script>
+  /* #ifdef (SOME_VAR === 'foo' && SOME_OTHER_VAR='bar') */
   import "side-effect-package";
   /* #endif */
 </script>
@@ -55,4 +72,15 @@ DEBUG=true npm run build
 
 ```bash
 SOME_VAR=foo npm run build
+```
+
+Output:
+
+```html
+<!-- App.svelte -->
+<script>
+  import "side-effect-package";
+</script>
+
+<p>Some content</p>
 ```
