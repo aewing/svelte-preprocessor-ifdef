@@ -1,4 +1,4 @@
-import ejs from "ejs";
+import { render } from "ejs";
 import type { IfDefPreprocessorOptions } from "./types";
 
 export const IFDEF_DEFAULT_REGEX =
@@ -16,7 +16,7 @@ export async function parseIfDef(
     (match, condition, content) => {
       // handle else
       const [ifContent, elseContent] = content.split("/* #else */");
-      const result = ejs.render(
+      const result = render(
         `<% if (${condition}) { %>${ifContent || ""}<% } else { %>${
           elseContent || ""
         }<% } %>`,

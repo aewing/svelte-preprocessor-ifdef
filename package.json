@@ -6,7 +6,13 @@
     "type": "git",
     "url": "https://github.com/aewing/svelte-preprocessor-ifdef.git"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -16,8 +22,8 @@
   },
   "scripts": {
     "test": "vitest",
-    "build": "tsup --format cjs,esm --external ejs --sourcemap --splitting ./src/index.ts",
-    "watch": "tsup --watch --format cjs,esm --external ejs --sourcemap --splitting ./src/index.ts"
+    "build": "tsup --format cjs,esm --external ejs --sourcemap --splitting ./src/index.ts --dts",
+    "watch": "tsup --watch --format cjs,esm --external ejs --sourcemap --splitting ./src/index.ts --dts"
   },
   "keywords": [
     "ifdef",
